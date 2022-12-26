@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "261aee7b-325e-41c4-9230-76afa57b9da0",
+		"name": "Barogo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11327726"
+	},
+	"item": [
+		{
+			"name": "회원가입",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\": \"barogogo1\",\r\n\"passwd\": \"Pwd#12345678793412\",\r\n\"name\": \"바로고1\",\r\n\"address\": \"인천광역시 연수구 테크노파크로 151\",\r\n\"email\": \"test@tesgt.com\"  \r\n,\"phone\":\"010-1234-1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9090/v1/api/user/signUp",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"v1",
+						"api",
+						"user",
+						"signUp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "배달 조회 API",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"searchStartAt\": \"2022-12-24 00:00:00\",\r\n        \"searchEndAt\": \"2022-12-27 09:00:00\" ,\r\n        \"ordererId\":\"barogo1\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9090/v1/api/delivery/search",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"v1",
+						"api",
+						"delivery",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "배송지 수정",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"deliveryNo\": \"3\",\r\n\"deliveryAddress\": \"인천 중구 영종해안남로 19-5 \",\r\n\"deliveryZipCode\": \"22382\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/v1/api/delivery/update/address",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"api",
+						"delivery",
+						"update",
+						"address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "로그인",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"mnetna\",\r\n    \"passwd\":\"Pwd#12345678793412\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
